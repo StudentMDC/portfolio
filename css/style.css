@@ -1,0 +1,259 @@
+* {
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+i {
+  color: #00343b ;
+}
+p {
+  font-weight: 200;
+}
+body {
+  margin: 0;
+  font-family: "Rubik", sans-serif;
+  color: white;
+  background-color: black;
+  scroll-behavior: smooth;
+}
+.main .text {
+  font-family: "Inconsolata", monospace;
+  font-size: 30px;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* START Header */
+header {
+  margin-top: 5px;
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+}
+ul {
+  display: flex;
+  justify-content: center;
+  column-gap: 5px;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+@media (min-width: 780px) {
+  ul {
+    flex-direction: column;
+    row-gap: 25px;
+  }
+}
+h1 {
+  text-align: center;
+  color: #00c2e2;
+  font-variant: small-caps;
+  letter-spacing: 5px;
+  line-height: 2.2;
+  font-weight: 700;
+}
+h2 {
+  color: white;
+  font-variant: small-caps;
+  letter-spacing: 4px;
+  font-weight: 400;
+  margin-left: 20px;
+}
+@media (min-width: 790px) {
+  h2 {
+    margin-left: 100px;
+
+  }
+}
+ul li:hover,h1:hover {
+  color: #ec4899;
+}
+header .sidelist {
+  background-color: #6648ec;
+  width: 50%;
+  border-radius: 50px;
+  padding: 0;
+}
+@media (min-width: 780px) {
+  header .sidelist {
+    background-color: transparent;
+    border-radius: 0px;
+    width: fit-content;
+  }
+}
+header .logo {
+  width: 60px;
+  height: 60px;
+  margin-right: 0;
+  position: fixed;
+  right: 15px;
+}
+header .logo img {
+  max-width: 100%;
+}
+/* END Header */
+/* START Main */
+.gradient-text-pink {
+  background-image: linear-gradient(to right, #6648ec, #ec4899);
+  background-clip: text;
+  color: #0000;
+  -webkit-background-clip: text;
+}
+.main {
+  height: 100vh;
+}
+.main .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+@media (min-width: 780px) {
+  .main .container {
+    flex-direction: row-reverse;
+  }
+}
+.main .landing {
+  width: 200px;
+  height: 150px;
+  animation: img-up-down 1.2s linear infinite alternate forwards;
+}
+@media (min-width: 780px) {
+  .main .text {
+    margin-left: 15%;
+  }
+}
+@media (min-width: 780px) {
+  .main .landing  {
+    width: 500px;
+    height: 300px;
+  }
+}
+@keyframes img-up-down {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+.main .landing img {
+  max-width: 100%;
+}
+.main .arrow {
+  width: 40px;
+  height: 40px;
+  background: url("../images/arrow.png");
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  animation: down-arr 1s linear 2s infinite forwards;
+}
+@keyframes down-arr {
+  0%{
+    bottom: 10px;
+  }
+  50% {
+    bottom: 15px;
+  }
+}
+/* END Main */
+/* START My project */
+#myprojects {
+  padding-top: 60px;
+  height: 100vh;
+}
+#myprojects .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 40px;
+}
+#myprojects .box .image img {
+  max-width: 100%;
+}
+.box {
+  box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+  background-color: white;
+  border-radius: 6px;
+  overflow: hidden;
+  height: fit-content;
+}
+.box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
+}
+.box img {
+  width: 100%;
+  max-width: 100%;
+}
+.box .content {
+  padding: 20px;
+}
+.box .content h3 {
+  color: #00343b ;
+  font-weight: 400;
+  margin: 0;
+}
+.box .content p {
+  margin: 10px 0 0;
+  line-height: 1.5;
+  color: #777;
+}
+.box .info {
+  padding: 20px;
+  border-top: 1px solid #e6e6e7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.box .info a {
+  color: #00c2e2;
+  font-weight: 400;
+}
+.box:hover .info i {
+  animation: moving-arrow 0.6s linear infinite;
+}
+@keyframes moving-arrow {
+  100% {
+    transform: translateX(10px);
+  }
+}
+/* END My project */
