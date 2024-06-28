@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      strong,span {
+        color: #ec4899;
+        font-weight: 600;
+        font-variant: small-caps;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>how does js work</h1>
+      <div class="container">
+        <h2>Execution context</h2>
+        <p>
+          As a frontEnd developper you often think about how does js work and how does it
+          do what it does? <br> First of all js is not understood by browsers and so
+          it does all that it does using a js engine. The right question now to
+          have is how does a JS engine understand the code that is given to it
+          and how does it work on it ?
+        </p>
+        <p>
+          It first creates a <strong>global execution context</strong>. But what
+          is an <span> Execution context </span> ? an execution context simply
+          put is a chart that has two columns the <strong>Memory</strong> and
+          <strong>Execution</strong> we fill those columns following two phases.
+          <br />
+          1. First phase is <strong>Initial phase </strong> in which we
+          initialise all global variables to "undefined" by putting them into
+          the Memory column, when we enconter a function we put their
+          declaration into the Memory column as well
+          <br />
+          2. Second phase is <strong>Execution phase</strong> in which we put
+          the line of code related to the variables we've just initialised
+        </p>
+        <p>
+          Now that we have the lines of code in the column of
+          <strong>Execution</strong> whenever we enconter a function call we
+          create a <strong>function execution context</strong> which follows the 
+          same steps except it belongs to a function and not the window object
+        </p>
+        <h2>Execution callstack</h2>
+        <p>
+          Now that we now the gist of how an execution context is created, we move into
+          how it is managed. As mentionned above the <span>global execution context</span> 
+          is the first to be created, but there is more to this because after creation
+          it stores it in an <span>execution stack</span> which is a type of <span>data structure</span>.
+          As we said whenever a function call is encountered in the lines of code it creates an execution 
+          context where does it go ?
+          Onto the stack, on top of the global execution context and then whenever the function is executed 
+          the engine pops it out of the stack
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
