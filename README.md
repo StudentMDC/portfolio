@@ -3,5 +3,6 @@
 ![Design preview for the Results summary component coding challenge](./design/ui.png)
 
 
-## Welcome! 👋
+## [Preview](https://studentmdc.github.io/portfolio/)
+
 
